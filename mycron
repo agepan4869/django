@@ -1,0 +1,1 @@
+* * * * * /usr/local/bin/python /code/manage.py sync_media_files >> /var/log/cron.log 2>&1

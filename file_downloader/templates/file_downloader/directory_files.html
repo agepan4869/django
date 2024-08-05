@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ディレクトリ：{{ directory }}</title>
+</head>
+<body>
+    <h1>ディレクトリ：{{ directory }}</h1>
+    <ul>
+        <li>
+            <a href="{% url 'file_list' %}">../</a>
+        </li>
+        {% for subdirectory in subdirectories %}
+            <li>
+                <a href="{% url 'directory_files' directory|add:'/'|add:subdirectory|urlencode %}">/{{ subdirectory }}</a>
+            </li>
+        {% endfor %}
+        {% for file_id, file_name in files %}
+            <li>
+                <a href="{% url 'download_file' file_id %}">{{ file_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

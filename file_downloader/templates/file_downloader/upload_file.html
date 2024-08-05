@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ファイルアップロード</title>
+</head>
+<body>
+    <h1>ファイルアップロード</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_directory">ディレクトリ:</label>
+        <input type="text" name="directory" id="id_directory" value="{{ default_directory }}"><br>
+        <label for="id_file">ファイル:</label>
+        <input type="file" name="file" id="id_file"><br>
+        <button type="submit">アップロード</button>
+    </form>
+    <a href="{% url 'file_list' %}">ディレクトリリストに戻る</a>
+</body>
+</html>

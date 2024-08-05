@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rootディレクトリ</title>
+</head>
+<body>
+    <h1>rootディレクトリ</h1>
+    <ul>
+        {% for directory in directories %}
+            <li>
+                <a href="{% url 'directory_files' directory|urlencode %}">/{{ directory }}</a>
+            </li>
+        {% endfor %}
+        {% for file_id, file_name in files %}
+        <li>
+            <a href="{% url 'download_file' file_id %}">{{ file_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'upload_file' %}">ファイルのアップロード</a>
+</body>
+</html>
