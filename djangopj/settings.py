@@ -38,10 +38,13 @@ LOGGING = {
         },
     },
     'loggers': {
-        'file_downloader': {
+        'django': {
             'handlers': ['console'],
             'level': 'DEBUG',
-            'propagate': True,
+        },
+        '__main__': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
         },
     },
 }
@@ -69,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'djangopj.middleware.RestrictIPMiddleware'
 ]
 
 ROOT_URLCONF = 'djangopj.urls'
