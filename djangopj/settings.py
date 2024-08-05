@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authorization',
     'file_downloader',
+    'top',
 ]
 
 MIDDLEWARE = [
