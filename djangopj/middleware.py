@@ -2,13 +2,11 @@
 
 import logging
 from django.http import HttpResponseForbidden
+from .allow_IPs import *
 
 logger = logging.getLogger(__name__)
 
-# ここに許可IPを追記していく
-ALLOWED_IPS = [
-    '192.168.96.1'
-]
+
 
 class RestrictIPMiddleware:
     def __init__(self, get_response):
