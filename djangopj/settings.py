@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from .settings_local import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,8 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z_qx@)fxk9wm7l#cc8fi4r6p)u%qn)jb_v)zf=pb=fp7$)g0-7'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -89,21 +89,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangopj.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_docker',
-        'USER': 'django',
-        'PASSWORD': 'django',
-        'HOST': 'db',
-        'POST': '3306'
-    }
-}
 
 
 # Password validation
