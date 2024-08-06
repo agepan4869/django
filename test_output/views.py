@@ -4,6 +4,7 @@ import pandas as pd
 from django.conf import settings
 from django.http import HttpResponse
 from django.core.management import call_command
+from django.shortcuts import redirect
 
 def export_excel(request):
     now = datetime.datetime.now()
@@ -27,9 +28,9 @@ def export_excel(request):
     if not os.path.exists(directory):
         os.makedirs(directory)
     
-    file_path = os.path.join(directory, f'test_{now.strftime("%Y%m%d_%H%M%S")}.xlsx')
+    file_path = os.path.join(directory, f'test_{now.strftime("%Y_%m_%d_%H_%M_%S")}.xlsx')
     df.to_excel(file_path)
     
     call_command('sync_media_files')
 
-    return HttpResponse(status=200)
+    return redirect('top_page')

@@ -29,6 +29,17 @@ class CustomUserManager(BaseUserManager):
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(verbose_name='ユーザーネーム', unique=True, max_length=100)
     is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    date_joined = models.DateTimeField(auto_now_add=True)
+
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = []
+
+    class Meta:
+        verbose_name = 'ユーザー'
+        verbose_name_plural = 'ユーザー'
+
+    def __str__(self):
+        return self.username
