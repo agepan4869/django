@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('file/', include('file_downloader.urls')),
     path('', top_views.top_page, name='top_page'),  # URLパターンを渡す
+    path('test/', include('test_output.urls')),
 ]
 
 if settings.DEBUG:

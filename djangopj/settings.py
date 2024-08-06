@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'authorization',
     'file_downloader',
     'top',
+    'test_output',
 ]
 
 MIDDLEWARE = [
