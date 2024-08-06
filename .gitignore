@@ -2,6 +2,7 @@ mysql/*
 media/*
 **/__pycache__/*
 **/*__pycache__/*
+**/**/__pycache__/*
 mysql
 djangopj/settings_local.py
 **/*allow_IPs.py
